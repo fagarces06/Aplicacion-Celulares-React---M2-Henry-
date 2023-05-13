@@ -20,7 +20,7 @@ import { connect } from "react-redux";
 
 export class Home extends Component {
   render() {
-    return <div className="home"></div>;
+    return <div className="home">Home</div>;
   }
 }
 

@@ -16,7 +16,7 @@ import "./celularCard.css";
 import React from "react";
 
 const CelularCard = (props) => {
-  return <div className="card"></div>;
+  return <div className="card">CelularCard</div>;
 };
 
 export default CelularCard;

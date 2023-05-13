@@ -10,8 +10,33 @@ REQUISITOS
 */
 
 import React from "react";
+//import {Routes,Route,Link,useParams} from 'react-router-dom';
+import {Routes, Route} from  'react-router-dom';
+import Home from "./components/Home/Home";
+import CelularCard from "./components/CelularCard/CelularCard";
+import CelularDetail from "./components/CelularDetail/CelularDetail";
+import Nav from "./components/Nav/Nav";
+
 
 const App = () => {
-  return <div></div>;
-};
+  return (
+
+    <div>
+      <Nav></Nav>
+      <Routes>
+          <Route path="/" element={<Home/>}></Route>
+          <Route path="/celulares/:id" element={<CelularDetail/>}></Route>
+          <Route path="/celulares/create" element={<CelularCard/>}></Route>
+    
+        
+      </Routes>
+    
+
+
+    
+    
+    </div>
+
+  );
+}
 export default App;

@@ -23,7 +23,7 @@ import "./celularDetail.css";
 import React from "react";
 
 const CelularDetail = (props) => {
-  return <div className="detail"></div>;
+  return <div className="detail">Celular Detail</div>;
 };
 
 export default CelularDetail;
