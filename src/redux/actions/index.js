@@ -5,31 +5,49 @@
 // return axios(...)...
 // return fetch(...)...
 import axios from 'axios';
+import { useState } from 'react';
 export const GET_ALL_CELULARES = "GET_ALL_CELULARES";
 export const GET_CELULARES_DETAIL = "GET_CELULARES_DETAIL";
 export const CREATE_CELULAR = "CREATE_CELULAR";
 export const DELETE_CELULAR = "DELETE_CELULAR";
 
+/*
+const getall=async()=>{
+    try{
+        const respuesta= axios.get('http://localhost:3001/celulares/');
+        return respuesta;
+    }
+    catch(error){
+        console.log(error);
+
+    }
 
 
-//base da tos
-
-const baseUrl='http://localhost:3001/celulares/';
-
-const getAll=async()=>{
-    const res= await axios.get(baseUrl);
-    return res.data;
 }
-const {value}=getAll();
-console.log(value);
-console.log("la data es:",getAll()['value']);
+
+const datap= getall();
+
+console.log("la var data:",datap);
+*/
+
+const getAll=()=>{
+    axios.get('http://localhost:3001/celulares/').then(respuesta=>{
+            return (respuesta.data);
+
+    }).catch(()=>{
+        console.log("no funciona hay algun error");
+    })
+}
+
+const data=getAll();
+console.log("var data hombre:",data);
 // 🟢 getAllCelulares:
 // Esta función debe realizar una petición al Back-End. Luego despachar una action con la data recibida.
 // End-Point: 'http://localhost:3001/celulares'.
-export const getAllCelulares = (data) => {
+export const getAllCelulares = (payload) => {
     return{
         type:GET_ALL_CELULARES,
-        payload: "prueba",
+        
     }
 
 };
