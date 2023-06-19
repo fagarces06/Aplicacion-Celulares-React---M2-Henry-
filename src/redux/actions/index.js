@@ -29,7 +29,7 @@ const datap= getall();
 
 console.log("la var data:",datap);
 */
-
+/*
 const getAll=()=>{
     axios.get('http://localhost:3001/celulares/').then(respuesta=>{
             return (respuesta.data);
@@ -40,25 +40,41 @@ const getAll=()=>{
 }
 
 const data=getAll();
-console.log("var data hombre:",data);
+*/
+
 // 🟢 getAllCelulares:
 // Esta función debe realizar una petición al Back-End. Luego despachar una action con la data recibida.
 // End-Point: 'http://localhost:3001/celulares'.
-export const getAllCelulares = (payload) => {
-    return{
-        type:GET_ALL_CELULARES,
+export const getAllCelulares = async (dispatch,getState) => {
+    try{
+        console.log("entra al try");
+        const res= await axios.get( `http://localhost:3001/celulares`);
+        const basedata=res.data;
+        console.log(basedata);
         
+        
+        dispatch({
+            type: GET_ALL_CELULARES,
+            payload: basedata
+        })
+
+    }catch{
+        console.log("error al acceder a la base de datos local");
     }
+    
+    
 
 };
 
-
+getAllCelulares();
 
 // 🟢 getCelularesDetails:
 // Esta función debe hacer una petición al Back-End. Ten en cuenta que tiene que recibir la variable "id" por
 // parámetro. Luego despachar una action con la data recibida.
 // End-Point: 'http://localhost:3001/celulares/:id'.
 export const getCelularDetails = (id) => {
+
+
     return {
         type:GET_CELULARES_DETAIL,
     }

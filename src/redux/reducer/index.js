@@ -24,12 +24,14 @@ REQUISITOS:
 */
 
 const rootReducer = (state = initialState, action) => {
+    console.log("entro al reducer");
+    console.log("accion del reducer",action.type);
   switch (action.type) {
     case GET_ALL_CELULARES:
-
+        console.log("entro al reducer Case Get All Celular");
       return{
           ...state,
-          celulares:state.celulares,
+          celulares:action.payload,
       }
   case GET_CELULARES_DETAIL:
       

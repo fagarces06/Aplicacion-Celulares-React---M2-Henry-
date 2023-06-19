@@ -21,7 +21,7 @@ import * as actions from "../../redux/actions/index";
 import React from "react";
 
 const CreateCelular = () => {
-  return <div></div>;
+  return <div>Componente Creat Celular</div>;
 };
 
 export default CreateCelular;
